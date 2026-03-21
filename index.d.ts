@@ -1,4 +1,4 @@
-/**
+/*
 * @license Apache-2.0
 *
 * Copyright (c) 2026 The Stdlib Authors.
@@ -16,16 +16,26 @@
 * limitations under the License.
 */
 
-'use strict';
+// TypeScript Version: 4.1
+
+/// <reference types="https://cdn.jsdelivr.net/gh/stdlib-js/types@esm/index.d.ts"/>
+
+import { ndarray } from '@stdlib/types/ndarray';
 
 /**
-* Serialize an ndarray as a locale-aware string.
+* Serializes an ndarray as a locale-aware string.
 *
-* @module @stdlib/ndarray-to-locale-string
+* ## Notes
+*
+* -   The function does **not** serialize data outside of the buffer region defined by the ndarray view.
+*
+* @param x - input ndarray
+* @param locales - locale identifier(s)
+* @param options - configuration options
+* @returns string representation
 *
 * @example
-* var array = require( '@stdlib/ndarray-array' );
-* var ndarray2localeString = require( '@stdlib/ndarray-to-locale-string' );
+* var array = require( `@stdlib/ndarray/array` );
 *
 * var x = array( [ [ 1.0, 2.0 ], [ 3.0, 4.0 ] ] );
 * // returns <ndarray>
@@ -33,12 +43,9 @@
 * var str = ndarray2localeString( x );
 * // returns <string>
 */
-
-// MODULES //
-
-var main = require( './main.js' );
+declare function ndarray2localeString( x: ndarray, locales?: string | Array<string>, options?: Object ): string;
 
 
 // EXPORTS //
 
-module.exports = main;
+export = ndarray2localeString;
